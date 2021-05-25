@@ -1,0 +1,39 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid black;
+	border-radius: 10px;
+	width: 50%;
+	padding: 10px;
+}
+.subContainer {
+	display: flex;
+	align-items: center;
+	margin-bottom: 10px;
+}
+.subContainer > :not(:last-child) {
+	margin-right: 10px;
+}
+.label {
+	font-size: 20px;
+	font-weight: 600;
+	margin-bottom: 5px;
+}
+.input {
+	width: 120px;
+	margin-bottom: 10px;
+}
+.button {
+	border: 1px solid black;
+	background-color: rgba(0, 0, 0, 0.1);
+	outline: none;
+	border-radius: 5px;
+	height: 30px;
+	cursor: pointer;
+}
+.buttonDisabled {
+	pointer-events: none;
+	background-color: transparent;
+}

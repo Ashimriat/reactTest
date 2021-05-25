@@ -1,0 +1,71 @@
+@keyframes rotate {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.loaderGeneral {
+	width: 50px;
+	height: 50px;
+	transition: opacity 1s;
+	opacity: 1;
+}
+.fading {
+	opacity: 0;
+}
+.waiting {
+	width: 0;
+	height: 0;
+}
+.processing {
+	border-radius: 50%;
+	border: 2px solid;
+	border-left: 0;
+	border-bottom: 0;
+	border-color: orange;
+	animation-name: rotate;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+}
+.success, .fail {
+	position: relative;
+	border-radius: 50%;
+}
+.success {
+	background-color: green;
+}
+.fail {
+	background-color: red;
+}
+.success::before, .fail::before {
+	transform: rotate(45deg);
+}
+.success::after, .fail::after {
+	transform: rotate(-45deg);
+}
+.success::before, .success::after,
+.fail::before, .fail::after {
+	content: "";
+	position: absolute;
+	background-color: white;
+	width: 5px;
+	height: 15px;
+}
+.success::before {
+	top: 13px;
+	left: 27px;
+	height: 25px;
+}
+.success::after {
+	top: 23px;
+	left: 15px;
+}
+.fail::before, .fail::after {
+	top: 7px;
+	left: 22px;
+	height: 35px;
+}
